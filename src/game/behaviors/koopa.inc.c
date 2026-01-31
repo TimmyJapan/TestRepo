@@ -283,6 +283,7 @@ static void koopa_shelled_update(void) {
         obj_handle_attacks(&sKoopaHitbox, KOOPA_SHELLED_ACT_DIE, sKoopaShelledAttackHandlers);
         if (o->oAction == KOOPA_SHELLED_ACT_DIE) {
             obj_die_if_health_non_positive();
+            spawn_object(o, MODEL_EXPLOSION, bhvExplosion);
         }
     }
 

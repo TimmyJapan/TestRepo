@@ -15,7 +15,7 @@ struct ObjectHitbox sYellowCoinHitbox = {
 s32 bhv_coin_sparkles_init(void) {
     if (o->oInteractStatus & INT_STATUS_INTERACTED
         && !(o->oInteractStatus & INT_STATUS_TOUCHED_BOB_OMB)) {
-        spawn_object(o, MODEL_SPARKLES, bhvCoinSparkles);
+        spawn_object(o, MODEL_EXPLOSION, bhvExplosion);
         obj_mark_for_deletion(o);
         return TRUE;
     }
@@ -98,6 +98,8 @@ void bhv_spawned_coin_loop(void) {
     if (o->oMoveFlags
         & OBJ_MOVE_BOUNCE) { /* delete this when i'm no longer using a build as md5sum reference */
                              // cur_obj_play_sound_2(SOUND_GENERAL_COIN_DROP);
+        spawn_object(o, MODEL_EXPLOSION, bhvExplosion);
+        o->activeFlags = ACTIVE_FLAG_DEACTIVATED;
     }
 
     if (cur_obj_wait_then_blink(400, 20)) {

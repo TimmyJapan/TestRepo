@@ -372,7 +372,7 @@ s32 common_death_handler(struct MarioState *m, s32 animation, s32 frameToDeathWa
         level_trigger_warp(m, WARP_OP_DEATH);
     }
     m->marioBodyState->eyeState = MARIO_EYES_DEAD;
-    spawn_object(o, MODEL_EXPLOSION, bhvExplosion);
+    spawn_object(MODEL_EXPLOSION, bhvExplosion);
     o->activeFlags = ACTIVE_FLAG_DEACTIVATED;
     stop_and_set_height_to_floor(m);
     return animFrame;

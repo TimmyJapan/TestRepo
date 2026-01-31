@@ -101,6 +101,7 @@ void opened_cannon_act_1(void) {
 
     o->oCannonUnk10C = FALSE;
     gMarioShotFromCannon = TRUE;
+    spawn_object(o, MODEL_EXPLOSION, bhvExplosion);
 }
 
 void opened_cannon_act_2(void) {

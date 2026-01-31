@@ -148,6 +148,7 @@ static void hana_act_walk(void) {
 static void hana_act_attacked_mario(void) {
     if (o->oGoombaSize == HANA_SIZE_TINY) {
         mark_goomba_as_dead();
+        spawn_object(o, MODEL_EXPLOSION, bhvExplosion);
         o->oNumLootCoins = 0;
         obj_die_if_health_non_positive();
     } else {

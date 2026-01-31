@@ -220,6 +220,7 @@ static void goomba_act_attacked_mario(void) {
         mark_goomba_as_dead();
         o->oNumLootCoins = 0;
         obj_die_if_health_non_positive();
+        spawn_object(o, MODEL_EXPLOSION, bhvExplosion);
     } else {
         //! This can happen even when the goomba is already in the air. It's
         //  hard to chain these in practice

@@ -236,6 +236,7 @@ void bhv_hoot_loop(void) {
         case HOOT_AVAIL_READY_TO_FLY:
             hoot_awake_loop();
             cur_obj_become_tangible();
+            spawn_object(o, MODEL_EXPLOSION, bhvExplosion);
             break;
     }
 }

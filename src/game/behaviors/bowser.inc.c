@@ -1078,6 +1078,7 @@ void bowser_act_dance(void) {
 void bowser_spawn_collectable(void) {
     spawn_object_relative(0, 0, 200.0f, 200.0f, o, MODEL_STAR, bhvStar);
     obj_spawn_loot_yellow_coins(o, 20, 4.0f);
+    spawn_object(o, MODEL_EXPLOSION, bhvExplosion);
 }
 
 s8 bowserTimer;
@@ -1161,6 +1162,7 @@ void bowser_dead_hide(void) {
     o->oForwardVel = 0;
     o->oVelY = 0;
     o->oGravity = 0;
+    spawn_object(o, MODEL_EXPLOSION, bhvExplosion);
 }
 
 /**
